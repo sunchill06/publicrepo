@@ -1,0 +1,7 @@
+version: '3'
+services:
+  webtier:
+    image: webtier:win
+    platform: windows
+    ports:
+      - 80
