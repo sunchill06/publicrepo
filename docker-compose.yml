@@ -3,4 +3,6 @@ version: '3'
 services:
   
   dotnetconf19:
-    image: dockersample
+    image: dockersample/dotnetconf:19
+    build:
+      context: .
