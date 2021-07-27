@@ -3,7 +3,7 @@ version: '3.1'
 services:
   
   nginx-qa:
-    image: nginx:1.20
+    image: nginx:latest
     environment:
       v: "${foo}"
       v1: ${e}"
