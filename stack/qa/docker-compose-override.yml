@@ -4,3 +4,6 @@ services:
   
   nginx-qa:
     image: nginx:1.20
+    environment:
+      v: "${foo}"
+    
