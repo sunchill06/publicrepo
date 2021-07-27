@@ -3,4 +3,4 @@ version: '3.1'
 services:
   
   nginx-qa:
-    image: nginx:alpine 
+    image: nginx:1.20
