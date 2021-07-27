@@ -6,5 +6,5 @@ services:
     image: nginx:latest
     environment:
       v: "${foo}"
-      v1: ${e}"
+      v1: "${e}"
     
