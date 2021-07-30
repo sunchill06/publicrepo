@@ -7,4 +7,5 @@ services:
     environment:
       v: "${foo}"
       v1: "${e}"
+      v2: "${var}"
     
