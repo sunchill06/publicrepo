@@ -1,0 +1,34 @@
+#events { }
+#http {
+    # ...
+    # Backend Go and Java applications
+    upstream backend {
+        server go-app:8080 weight=7;
+	server java-app:8080 weight=3;
+    }
+
+    #upstream java {
+	#server java-app:8080;
+    #}
+
+    #split_clients "${request_id}" $appversion {
+    #    70%     go;
+    #    *       java;
+    #}
+
+    log_format upstream_logs '$remote_addr [$time_local] "$request" $status'
+  '"$upstream_addr" $upstream_response_time $upstream_http_etag';
+
+    server {
+        # ...
+        listen 8080;
+	access_log /var/log/nginx/upstream.log upstream_logs;
+	rewrite ^/$ /hotels permanent;
+
+        location / {
+            #proxy_set_header Host $host;
+            #proxy_pass http://$appversion/;
+            proxy_pass http://backend/;
+        }
+    }
+#}
