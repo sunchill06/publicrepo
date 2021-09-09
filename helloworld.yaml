@@ -12,6 +12,7 @@ spec:
       labels:
         app: helloworld
     spec:
+      restartPolicy: Never
       containers:
       - name: hello-world
         image: hello-world
