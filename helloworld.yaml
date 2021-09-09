@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: hello-world
-        command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600']
+        image: nginx:alpine
         ports:
         - containerPort: 80
