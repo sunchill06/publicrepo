@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deploy-demo
+  namespace: local-ns
 spec:
   replicas: 2
   selector:
