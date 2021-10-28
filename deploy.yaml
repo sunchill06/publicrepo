@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deploy-demo
+  name: nginx-deploy-new
+  namespace: ns-local
 spec:
   replicas: 2
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.14
+        image: nginx:alpine
         resources:
           requests:
             memory: "64Mi"
